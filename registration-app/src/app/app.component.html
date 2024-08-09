@@ -1,0 +1,22 @@
+<!-- app.component.html -->
+<div class="container mt-5">
+  <app-register (dataSubmitted)="displayData($event)"></app-register>
+
+  <div *ngIf="registeredData" class="mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Registered Users</h2>
+      </div>
+      <div class="card-body">
+        <p>Full Name: {{ registeredData.fullName }}</p>
+        <p>Email: {{ registeredData.email }}</p>
+        <p>Mobile: {{ registeredData.mobile }}</p>
+        <p>Address: {{ registeredData.address }}</p>
+        <p>Password: {{ registeredData.password }}</p>
+        <p>Profile Image:</p>
+        <img *ngIf="registeredData.profileImage" [src]="registeredData.profileImage" alt="Profile Image" class="profile-image" />
+      </div>
+    </div>
+  </div>
+<br/>
+</div>

@@ -1,0 +1,76 @@
+<!-- register.component.html -->
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Registration Form</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" class="form-control" formControlName="fullName" />
+          <div *ngIf="submitted && registerForm.controls['fullName'].errors?.['required']" class="text-danger">
+            Full Name is required
+          </div>
+          <div *ngIf="submitted && registerForm.controls['fullName'].errors?.['maxlength']" class="text-danger">
+            Full Name cannot be more than 25 characters
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" formControlName="email" />
+          <div *ngIf="submitted && registerForm.controls['email'].errors?.['required']" class="text-danger">
+            Email is required
+          </div>
+          <div *ngIf="submitted && registerForm.controls['email'].errors?.['email']" class="text-danger">
+            Valid Email is required
+          </div>
+          <div *ngIf="submitted && registerForm.controls['email'].errors?.['maxlength']" class="text-danger">
+            Email cannot be more than 20 characters
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="mobile">Mobile</label>
+          <input type="text" id="mobile" class="form-control" formControlName="mobile" />
+          <div *ngIf="submitted && registerForm.controls['mobile'].errors?.['required']" class="text-danger">
+            Mobile number is required
+          </div>
+          <div *ngIf="submitted && registerForm.controls['mobile'].errors?.['pattern']" class="text-danger">
+            Mobile number must be exactly 10 digits
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" class="form-control" formControlName="address"></textarea>
+          <div *ngIf="submitted && registerForm.controls['address'].errors?.['required']" class="text-danger">
+            Address is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" formControlName="password" />
+          <div *ngIf="submitted && registerForm.controls['password'].errors?.['required']" class="text-danger">
+            Password is required
+          </div>
+          <div *ngIf="submitted && registerForm.controls['password'].errors?.['minlength']" class="text-danger">
+            Password must be at least 6 characters
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="profileImage">Profile Image</label>
+          <input type="file" id="profileImage" class="form-control" (change)="onFileChange($event)" />
+          <div *ngIf="submitted && !profileImage" class="text-danger">
+            Profile image is required
+          </div>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+  </div>
+</div>

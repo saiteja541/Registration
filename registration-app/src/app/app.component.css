@@ -1,0 +1,38 @@
+.container {
+    width: 600px; 
+    height: 400px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border-radius: 8px;
+    border: 1px solid #e3e3e3;
+  }
+  
+  .card-header {
+    background-color: #f0f4f8;
+    border-bottom: 1px solid #d0d8e4;
+  }
+  
+  .card-title {
+    margin: 0;
+    color: #4a4a4a; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 1.5rem; 
+    text-align: center; 
+  }
+  
+  .profile-image {
+    max-width: 150px;
+    max-height: 150px; 
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+  
